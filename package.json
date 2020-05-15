@@ -1,0 +1,25 @@
+{
+  "name": "shopify-minimum-by-zip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjPlusPlus/shopify-minimum-by-zip.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjPlusPlus/shopify-minimum-by-zip/issues"
+  },
+  "homepage": "https://github.com/jjPlusPlus/shopify-minimum-by-zip#readme",
+  "dependencies": {
+    "next": "^9.4.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
