@@ -22,6 +22,8 @@
   "homepage": "https://github.com/jjPlusPlus/shopify-minimum-by-zip#readme",
   "dependencies": {
     "@shopify/koa-shopify-auth": "^3.1.61",
+    "@shopify/polaris": "^4.22.0",
+    "@zeit/next-css": "^1.0.1",
     "dotenv": "^8.2.0",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.11.0",
