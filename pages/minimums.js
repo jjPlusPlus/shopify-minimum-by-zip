@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Page, Layout, TextStyle, EmptyState } from '@shopify/polaris';
 
+import { TitleBar } from '@shopify/app-bridge-react';
+
 const Minimums = (props) => {
   const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
@@ -17,6 +19,11 @@ const Minimums = (props) => {
 
   return (
     <Page>
+      <TitleBar
+        primaryAction={{
+          content: 'Add Zip Code',
+        }}
+      />
       { zipCodes && zipCodes.length ?
         <Layout>
           <h1>Minimum By Zip {props.key}</h1>
