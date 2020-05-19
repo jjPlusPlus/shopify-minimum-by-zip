@@ -9,8 +9,16 @@ import translations from '@shopify/polaris/locales/en.json';
 
 import Cookies from 'js-cookie';
 
-class MinimumByZip extends App {
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 
+const client = new ApolloClient({
+  fetchOptions: {
+    credentials: 'include'
+  },
+});
+
+class MinimumByZip extends App {
 
   render() {
     const config = { apiKey: API_KEY, shopOrigin: Cookies.get("shopOrigin"), forceRedirect: true };
@@ -23,7 +31,9 @@ class MinimumByZip extends App {
         </Head>
         <AppBridgeProvider config={config}>
           <PolarisProvider i18n={translations}>
-            <Component {...pageProps} />
+            <ApolloProvider client={client}>
+              <Component {...pageProps} />
+            </ApolloProvider>
           </PolarisProvider>
         </AppBridgeProvider>
       </React.Fragment>
