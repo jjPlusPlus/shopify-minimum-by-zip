@@ -1,8 +1,12 @@
 const resolvers = {
   Query: {
-    Restriction(parent, args, context, info) {
-      return [];
+    restrictions(parent, args, context, info) {
+      console.log(parent, args, context, info)
+      console.log("query:restriction was called")
+      const { dataSources } = context
+      const restrictions = dataSources.getRestrictions()
+      console.log(restrictions)
+      return restrictions
     },
-    // restrictions: (parent, args, { dataSources: { posts } }) => posts.getPosts(user.postIds)
   }
 }
