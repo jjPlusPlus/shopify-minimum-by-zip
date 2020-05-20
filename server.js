@@ -67,8 +67,17 @@ app.prepare().then(() => {
     app: server
   });
 
+  // const router = new koaRouter();
+
+  // router.post('/graphql', graphqlKoa({ schema: graphQLSchema }));
+  // router.get('/graphql', graphqlKoa({ schema: graphQLSchema }));
+
+  // server.use(koaBody());
   server.use(router.routes());
+  // server.use(router.allowedMethods());
+
   server.use(session({ sameSite: 'none', secure: true }, server));
+
   server.keys = [SHOPIFY_API_SECRET_KEY];
 
   server.use(
@@ -88,6 +97,7 @@ app.prepare().then(() => {
     }),
   );
 
+  // server.use(graphQLProxy({version: ApiVersion.April20}))
   server.use(verifyRequest());
   server.use(async (ctx) => {
     await handle(ctx.req, ctx.res);
