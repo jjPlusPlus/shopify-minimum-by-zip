@@ -61,6 +61,13 @@ const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY } = process.env;
 
 app.prepare().then(() => {
   const server = new Koa();
+  const router = new Router();
+
+  graphQLServer.applyMiddleware({
+    app: server
+  });
+
+  server.use(router.routes());
   server.use(session({ sameSite: 'none', secure: true }, server));
   server.keys = [SHOPIFY_API_SECRET_KEY];
 
