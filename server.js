@@ -17,10 +17,13 @@ const graphQLSchema = require('./server/schema/schema');
 const resolvers = require('./server/resolvers');
 const Restrictions = require('./server/RestrictionsDatasource.js')
 
-const { MongoClient } = require('mongodb');
-const mongoose = require('mongoose');
-
-const client = new MongoClient('mongodb+srv://minByZipUser:pfCF*QKwCET1C4GUeWz@minbyzip-k4d5f.gcp.mongodb.net/test?retryWrites=true&w=majority');
+const client = new MongoClient(
+  'mongodb+srv://minByZipUser:pfCF*QKwCET1C4GUeWz@minbyzip-k4d5f.gcp.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 client.connect()
 
 const typeDefs = gql`
