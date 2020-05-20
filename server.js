@@ -37,6 +37,16 @@ const typeDefs = gql`
   }
 `;
 
+const graphQLServer = new ApolloServer({
+  typeDefs,
+  resolvers,
+  dataSources: () => ({
+    restrictions: new Restrictions(client.db().collection('restrictions'))
+  }),
+  introspection: true,
+  playground: true,
+})
+
 dotenv.config();
 
 const port = parseInt(process.env.PORT, 10) || 3000;
