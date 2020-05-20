@@ -20,6 +20,9 @@ const Restrictions = require('./server/RestrictionsDatasource.js')
 const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
 
+const client = new MongoClient('mongodb+srv://minByZipUser:pfCF*QKwCET1C4GUeWz@minbyzip-k4d5f.gcp.mongodb.net/test?retryWrites=true&w=majority');
+client.connect()
+
 dotenv.config();
 
 const port = parseInt(process.env.PORT, 10) || 3000;
