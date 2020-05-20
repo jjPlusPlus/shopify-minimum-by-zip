@@ -13,3 +13,5 @@ const typeDefs = gql`
     restrictions: [Restriction]
   }
 `;
+
+module.exports = typeDefs
